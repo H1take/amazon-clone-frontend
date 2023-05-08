@@ -46,3 +46,5 @@ const Meta: FC<PropsWithChildren<ISeo>> = ({
         </>
     )
 };
+
+export default Meta;

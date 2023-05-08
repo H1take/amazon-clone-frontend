@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import AuthProvider from '@/providers/auth-provider/AuthProvider';
 import { TypeComponentAuthFields } from '@/providers/auth-provider/auth-pages.types';
 
-import '@/assets/styles/global.css';
+import '@/assets/styles/global.scss';
 
 import { persistor, store } from '@/store/store';
 
@@ -18,7 +18,7 @@ const queryClient = new QueryClient({
   },
 });
 
-export const App = ({
+const App = ({
   Component,
   pageProps,
 }: AppProps & TypeComponentAuthFields) => {
@@ -34,3 +34,5 @@ export const App = ({
     </QueryClientProvider>
   );
 };
+
+export default App;
