@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import AuthProvider from '@/providers/auth-provider/AuthProvider';
 import { TypeComponentAuthFields } from '@/providers/auth-provider/auth-pages.types';
 
-import '@/assets/styles/global.scss';
+import '@/assets/styles/globals.scss';
 
 import { persistor, store } from '@/store/store';
 
