@@ -3,6 +3,6 @@ import { IProduct } from "./product.interface";
 export interface ICartItem {
     id: number;
     product: IProduct;
-    quanity: number;
+    quantity: number;
     price: number;
 }

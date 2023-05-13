@@ -8,7 +8,7 @@ const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
     <div>
       <div>
         <FavoriteButton productId={product.id} />
-        <AddToCartButton productId={product.id} />
+        <AddToCartButton product={product} />
         <Image
           width={300}
           height={300}

@@ -1,11 +1,12 @@
-import { getStoreLocal } from '@/utils/local-storage';
 import { createSlice } from '@reduxjs/toolkit';
+
+import { getStoreLocal } from '@/utils/local-storage';
 
 import { checkAuth, login, logout, register } from './user.actions';
 import { IInitialState } from './user.interface';
 
 const initialState: IInitialState = {
-  user: getStoreLocal("user"),
+  user: getStoreLocal('user'),
   isLoading: false,
 };
 
