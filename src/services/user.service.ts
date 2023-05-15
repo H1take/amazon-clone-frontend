@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 import { getContentType } from '@/api/api.helper';
 import { instance } from '@/api/api.intercepter';
-import { IUser } from '@/types/user.interface';
+import { IFullUser, IUser } from '@/types/user.interface';
 
 const USERS = '/users';
 
@@ -17,7 +17,7 @@ type TypeData = {
 
 export const UserService = {
   async getProfile() {
-    return instance<IUser>({
+    return instance<IFullUser>({
       url: `${USERS}/profile`,
       method: 'GET',
     });

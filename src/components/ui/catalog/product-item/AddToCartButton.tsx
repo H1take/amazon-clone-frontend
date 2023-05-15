@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+import { RiShoppingCartLine, RiShoppingCartFill } from 'react-icons/ri';
 
 import { useActions } from '@/hooks/useActions';
 import { useCart } from '@/hooks/useCart';
@@ -27,7 +27,7 @@ const AddToCartButton: FC<{ product: IProduct }> = ({ product }) => {
               });
         }}
       >
-        {currentElement ? <AiFillHeart /> : <AiOutlineHeart />}
+        {currentElement ? <RiShoppingCartLine /> : <RiShoppingCartFill />}
       </button>
     </div>
   );

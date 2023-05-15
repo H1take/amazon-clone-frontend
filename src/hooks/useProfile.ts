@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { IUser } from '@/types/user.interface';
+import { IFullUser, IUser } from '@/types/user.interface';
 
 import { UserService } from '@/services/user.service';
 
@@ -9,5 +9,5 @@ export const useProfile = () => {
     select: ({ data }) => data,
   });
 
-  return { profile: data || ({} as IUser) };
+  return { profile: data || ({} as IFullUser) };
 };
