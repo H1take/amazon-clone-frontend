@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
 import { useActions } from '@/hooks/useActions';
+import { useAuth } from '@/hooks/useAuth';
 import { useCart } from '@/hooks/useCart';
 import { useProfile } from '@/hooks/useProfile';
 
@@ -15,13 +16,17 @@ const FavoriteButton: FC<{ productId: number }> = ({ productId }) => {
 
   const { invalidateQueries } = useQueryClient();
 
-  const { mutate } = useMutation(['toggle favorite'], () =>
-    UserService.toggleFavorite(productId), {
+  const { mutate } = useMutation(
+    ['toggle favorite'],
+    () => UserService.toggleFavorite(productId),
+    {
       onSuccess() {
-        invalidateQueries(['get profile'])
-      }
-    }
+        invalidateQueries(['get profile']);
+      },
+    },
   );
+
+  if (!profile) return null;
 
   const isExists = profile.favorites.some(
     (favorite) => favorite.id === productId,
@@ -33,6 +38,7 @@ const FavoriteButton: FC<{ productId: number }> = ({ productId }) => {
         onClick={() => {
           mutate();
         }}
+        className="text-primary"
       >
         {isExists ? <AiFillHeart /> : <AiOutlineHeart />}
       </button>

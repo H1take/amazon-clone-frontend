@@ -4,13 +4,22 @@ import Heading from '@/ui/Heading';
 import Meta from '@/ui/Meta';
 import Catalog from '@/ui/catalog/Catalog';
 
-import { TypeProducts } from '@/types/product.interface';
+import { useActions } from '@/hooks/useActions';
+import { useAuth } from '@/hooks/useAuth';
 
-const Home: FC<TypeProducts> = ({ products }) => {
+import {
+  TypePaginationProducts,
+  TypeProducts,
+} from '@/types/product.interface';
+
+const Home: FC<TypePaginationProducts> = ({ products, length }) => {
+  const { user } = useAuth();
+  const { logout } = useActions();
+
   return (
     <Meta title="Home">
-      <Heading>Hello world!</Heading>
-      <Catalog products={products} />
+      {!!user && <button onClick={() => logout()}></button>}
+      <Catalog title="Freshed products" products={products || []} />
     </Meta>
   );
 };

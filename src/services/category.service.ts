@@ -4,27 +4,27 @@ import Cookies from 'js-cookie';
 import { ICategory } from '@/types/category.interface';
 
 import { getContentType } from '@/api/api.helper';
-import { instance } from '@/api/api.intercepter';
+import { axiosClassic, instance } from '@/api/api.intercepter';
 
 const CATEGORIES = '/categories';
 
 export const CategoryService = {
   async getAll() {
-    return instance<ICategory[]>({
+    return axiosClassic<ICategory[]>({
       url: CATEGORIES,
       method: 'GET',
     });
   },
 
   async getById(id: string | number) {
-    return instance<ICategory>({
+    return axiosClassic<ICategory>({
       url: `${CATEGORIES}/${id}`,
       method: 'GET',
     });
   },
 
   async getBySlug(slug: string) {
-    return instance<ICategory>({
+    return axiosClassic<ICategory>({
       url: `${CATEGORIES}/by-slug/${slug}`,
       method: 'GET',
     });

@@ -20,3 +20,8 @@ export interface IProductDetails {
 export type TypeProducts = {
   products: IProduct[];
 };
+
+export type TypePaginationProducts = {
+  length: number;
+  products: IProduct[];
+};

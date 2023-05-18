@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { RiShoppingCartLine, RiShoppingCartFill } from 'react-icons/ri';
+import { RiShoppingCartFill, RiShoppingCartLine } from 'react-icons/ri';
 
 import { useActions } from '@/hooks/useActions';
 import { useCart } from '@/hooks/useCart';
@@ -17,6 +17,7 @@ const AddToCartButton: FC<{ product: IProduct }> = ({ product }) => {
   return (
     <div>
       <button
+        className="text-primary"
         onClick={() => {
           currentElement
             ? removeFromCart({ id: currentElement.id })

@@ -4,10 +4,18 @@ import { TailSpin } from 'react-loader-spinner';
 import { IProduct } from '@/types/product.interface';
 
 import ProductItem from './product-item/ProductItem';
+import Heading from '../Heading';
 
-const Catalog: FC<{ products: IProduct[]; isLoading?: boolean }> = ({
+interface ICatalog {
+  products: IProduct[];
+  isLoading?: boolean;
+  title?: string;
+}
+
+const Catalog: FC<ICatalog> = ({
   products,
   isLoading,
+  title
 }) => {
   if (isLoading)
     return (
@@ -25,6 +33,7 @@ const Catalog: FC<{ products: IProduct[]; isLoading?: boolean }> = ({
 
   return (
     <section>
+      {title && <Heading>{title}</Heading>}
       {products.length ? (
         products.map((product) => (
           <ProductItem key={product.id} product={product} />
