@@ -15,6 +15,7 @@ const ProductRating: FC<{ product: IProduct }> = ({ product }) => {
 
   return (
     <div className='mb-2'>
+      {!!product.reviews.length && 
       <span className='mr-1'>
         <Rating
           readonly
@@ -22,13 +23,14 @@ const ProductRating: FC<{ product: IProduct }> = ({ product }) => {
           SVGstyle={{
             display: 'inline-block',
           }}
-          size={34}
+          size={20}
           allowFraction
           transition
         />
-        <span style={{ color: '#FFBC0D' }}>{rating}</span>
+        <span style={{ color: '#FFBC0D' }} className="text-sm ml-1 pt-1" >{rating}</span>
       </span>
-      <span>({product.reviews.length} reviews)</span>
+      }
+      <span className='text-xs'>({product.reviews.length} reviews)</span>
     </div>
   );
 };
