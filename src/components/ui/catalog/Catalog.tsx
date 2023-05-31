@@ -7,7 +7,7 @@ import Heading from '../Heading';
 
 import ProductItem from './product-item/ProductItem';
 import Button from '../button/Button';
-import SortDropdown from './SortDropDown';
+import SortDropdown from './SortDropdown';
 
 interface ICatalog {
   products: IProduct[];
