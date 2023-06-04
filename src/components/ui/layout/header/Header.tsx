@@ -1,7 +1,9 @@
+import SearchPage from '@/../pages/q';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
+import amazonLogo from "../../../../assets/amazon-logo.png";
 
 const Header: FC = () => {
   return (
@@ -16,17 +18,17 @@ const Header: FC = () => {
           priority
           width={180}
           height={37}
-          src="/assets/amazon-logo.png"
+          src={amazonLogo}
           alt="Amazon Icon"
         />
       </Link>
-      <Search />
+      <SearchPage />
       <div className='flex items-center justify-end gap-10'>
         <Link href="/favorites" className='text-white'>
           <AiOutlineHeart size={28} />
         </Link>
-        <HeaderCart />
-        <HeaderProfile />
+        {/* <HeaderCart />
+        <HeaderProfile />  */}
       </div>
     </header>
   );
