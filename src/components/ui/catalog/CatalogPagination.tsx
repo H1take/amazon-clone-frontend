@@ -68,6 +68,7 @@ const CatalogPagination: FC<ICatalogPagination> = ({ data, title }) => {
               return (
                 // eslint-disable-next-line react/jsx-key
                 <Button
+                  key={pageNumber}
                   size="md"
                   variant={page === pageNumber ? 'orange' : 'white'}
                   onClick={() => setPage(pageNumber)}
