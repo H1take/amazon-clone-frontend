@@ -10,8 +10,9 @@ import { useCart } from '@/hooks/useCart';
 import { useOutside } from '@/hooks/useOutside';
 
 import { convertPrice } from '@/utils/convertPrice';
+import CartItem from './cart-item/CartItem';
 
-const Cart: FC = () => {
+const HeaderCart: FC = () => {
   const { isShow, setIsShow, ref } = useOutside(false);
 
   const { items, total } = useCart();
@@ -35,7 +36,8 @@ const Cart: FC = () => {
       >
         <div className="font-normal text-lg mb-5">My cart</div>
 
-        <div className={styles.cart}>
+        {/* <div className={styles.cart}> */}
+        <div>
           {items.length ? (
             items.map((item) => <CartItem item={item} key={item.id} />)
           ) : (
@@ -43,7 +45,8 @@ const Cart: FC = () => {
           )}
         </div>
 
-        <div className={styles.footer}>
+          <div>
+        {/* <div className={styles.footer}> */}
           <div>Total:</div>
           <div>{convertPrice(total)}</div>
         </div>

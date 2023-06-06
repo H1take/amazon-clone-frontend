@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { FC } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import amazonLogo from "../../../../assets/amazon-logo.png";
+import HeaderCart from './cart/HeaderCart';
+import HeaderProfile from './HeaderProfile';
 
 const Header: FC = () => {
   return (
@@ -27,8 +29,8 @@ const Header: FC = () => {
         <Link href="/favorites" className='text-white'>
           <AiOutlineHeart size={28} />
         </Link>
-        {/* <HeaderCart />
-        <HeaderProfile />  */}
+        <HeaderCart />
+        <HeaderProfile /> 
       </div>
     </header>
   );

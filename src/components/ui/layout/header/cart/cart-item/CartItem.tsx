@@ -9,7 +9,8 @@ import CartActions from './cart-actions/CartActions';
 
 const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
   return (
-    <div className={styles.item}>
+    <div>
+     {/* <div className={styles.item}> */}
       <Image
         src={item.product.images[0]}
         width={100}
@@ -17,8 +18,14 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
         alt={item.product.name}
       />
       <div>
-        <div className={styles.name}>{item.product.name}</div>
-        <div className={styles.price}>{convertPrice(item.product.price)}</div>
+        <div>
+        {/* <div className={styles.name}> */}
+          {item.product.name}
+        </div>
+        <div>
+        {/* <div className={styles.price}> */}
+          {convertPrice(item.product.price)}
+        </div>
         <CartActions item={item} />
       </div>
     </div>

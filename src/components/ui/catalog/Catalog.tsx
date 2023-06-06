@@ -34,7 +34,7 @@ const Catalog: FC<ICatalog> = ({ products, isLoading, title, isPagination = fals
   return (
     <section>
       {title && <Heading className='mb-5'>{title}</Heading>}
-      {isPagination && <SortDropdown />}
+      {/* {isPagination && <SortDropdown />} */}
       {products.length ? (
         <>
         <div className='grid grid-cols-4 gap-10'>
